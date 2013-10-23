@@ -43,6 +43,11 @@ h1, h2, h3, h4, h5, h6,
 #menu,
 .pure-button {
     font-family: 'blender', 'Helvetica Neue', Helvetica, sans-serf;
+    letter-spacing: 0;
+}
+
+.thin {
+    font-weight: 400;
 }
 
 * {
@@ -241,11 +246,11 @@ content
 /////////////////////////////////////////////////*/
 
 .content {
-    padding:1em;
 }
 
     .content.fixed-width {
         max-width: 600px;
+        padding:0 1em;
     }
 
 .splash-head strong {
@@ -257,4 +262,35 @@ content
 }
 .splash-subhead {
     font-size: 120%;
+}
+
+/*/////////////////////////////////////////////////
+PhenClock
+/////////////////////////////////////////////////*/
+
+header#phenclock {
+    background: #E93F33 url(../projects/phenclock/phenclock_splash_bkg.jpg) fixed center top;
+    overflow: hidden;
+    width:100%;
+    height: 500px;
+    position: relative;
+}
+
+header#phenclock::after {
+    content: '';
+    background: transparent url(../projects/phenclock/phenclock_splash.png) no-repeat scroll center center;
+    width:100%;
+    height: 500px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+header#phenclock .title {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-0.5em 0 0 10px;
+
+    color:white;
 }
