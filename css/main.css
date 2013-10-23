@@ -1,0 +1,260 @@
+/*
+red color: #E93F33;
+*/
+
+@font-face {
+    font-family: 'blender';
+    src: url('/assets/fonts/blender_00-webfont-webfont.eot');
+    src: url('/assets/fonts/blender_00-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/blender_00-webfont-webfont.woff') format('woff'),
+         url('/assets/fonts/blender_00-webfont-webfont.ttf') format('truetype'),
+         url('/assets/fonts/blender_00-webfont-webfont.svg#blender_pro_mediublenderproMd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'blender';
+    src: url('/assets/fonts/blender_01thin-webfont-webfont.eot');
+    src: url('/assets/fonts/blender_01thin-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/blender_01thin-webfont-webfont.woff') format('woff'),
+         url('/assets/fonts/blender_01thin-webfont-webfont.ttf') format('truetype'),
+         url('/assets/fonts/blender_01thin-webfont-webfont.svg#blender_pro_thinblenderproTh') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'blender';
+    src: url('/assets/fonts/blender_05heavy-webfont-webfont.eot');
+    src: url('/assets/fonts/blender_05heavy-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/blender_05heavy-webfont-webfont.woff') format('woff'),
+         url('/assets/fonts/blender_05heavy-webfont-webfont.ttf') format('truetype'),
+         url('/assets/fonts/blender_05heavy-webfont-webfont.svg#blender_pro_heavyblenderproHv') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+.blender,
+h1, h2, h3, h4, h5, h6,
+#menu,
+.pure-button {
+    font-family: 'blender', 'Helvetica Neue', Helvetica, sans-serf;
+}
+
+* {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+body {
+    color: #191818;
+    font-family: FreeSans,Arimo,"Droid Sans",Helvetica,Arial,sans-serif;
+    padding-left:150px;
+}
+
+a[href^="http"]::after {
+    content: '';
+    background: url(../assets/external_link.svg) no-repeat right center;
+    display: inline-block;
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
+}
+
+a {
+    color: #E93F33;
+    border-bottom:dashed 1px #E93F33;
+    text-decoration: none;
+}
+
+a:visited,
+a:hover {
+    border-bottom-style: solid;
+}
+
+p {
+    line-height: 1.25;
+}
+
+.pathfill {
+    fill: white;
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.pure-button {
+    font-weight: bold;
+}
+
+.primary-button {
+    background-color: #E93F33;
+    color: #FFF;
+}
+
+/*/////////////////////////////////////////////////
+Main Navigation Bar Styles
+/////////////////////////////////////////////////*/
+
+#menu {
+    margin-left: -150px; /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 150px;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scroll: touch;
+}
+    #menu a {
+        color: #999;
+        border: none;
+        padding: 0.6em;
+        white-space: normal;
+    }
+
+    #menu .pure-menu-open {
+        background: transparent;
+        border: 0;
+    }
+
+    #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+        border-top: 1px solid #333;
+    }
+
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: #333;
+        }
+
+    .pure-menu-link {
+        display: none; /* show this only on small screens */
+        top: 0;
+        left: 150px; /* "#menu width" */
+        background: #000;
+        background: rgba(0,0,0,0.7);
+        font-size: 10px; /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 2.1em 1.6em;
+    }
+
+        .pure-menu-link:hover,
+        .pure-menu-link:focus {
+            background: #000;
+        }
+
+        .pure-menu-link span {
+            position: relative;
+            display: block;
+        }
+
+        .pure-menu-link span,
+        .pure-menu-link span:before,
+        .pure-menu-link span:after {
+            background-color: #fff;
+            width: 100%;
+            height: .2em;
+            -webkit-transition: all 0.8s;
+               -moz-transition: all 0.8s;
+                -ms-transition: all 0.8s;
+                 -o-transition: all 0.8s;
+                    transition: all 0.8s;
+        }
+
+            .pure-menu-link span:before,
+            .pure-menu-link span:after {
+                position: absolute;
+                margin-top: -.6em;
+                content: " ";
+            }
+
+            .pure-menu-link span:after {
+                margin-top: .6em;
+            }
+
+        .pure-menu-link.active span {
+            background: transparent;
+        }
+
+            .pure-menu-link.active span:before {
+                -webkit-transform: rotate(45deg) translate(.5em, .4em);
+                   -moz-transform: rotate(45deg) translate(.5em, .4em);
+                    -ms-transform: rotate(45deg) translate(.5em, .4em);
+                     -o-transform: rotate(45deg) translate(.5em, .4em);
+                        transform: rotate(45deg) translate(.5em, .4em);
+            }
+
+            .pure-menu-link.active span:after {
+                -webkit-transform: rotate(-45deg) translate(.45em, -.35em);
+                   -moz-transform: rotate(-45deg) translate(.45em, -.35em);
+                    -ms-transform: rotate(-45deg) translate(.45em, -.35em);
+                     -o-transform: rotate(-45deg) translate(.45em, -.35em);
+                        transform: rotate(-45deg) translate(.45em, -.35em);
+            }
+
+    #menu .pure-menu-heading {
+        font-size: 110%;
+        color: #fff;
+    }
+    #menu .pure-menu-heading:hover,
+    #menu .pure-menu-heading:focus {
+        color: #FFF;
+    }
+
+    #menu .pure-menu-heading .logo {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    #menu .pure-menu-selected {
+        background: #E93F33;
+    }
+
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+        #menu li.pure-menu-selected a:hover,
+        #menu li.pure-menu-selected a:focus {
+            background: none;
+        }
+
+/*/////////////////////////////////////////////////
+content
+/////////////////////////////////////////////////*/
+
+.content {
+    padding:1em;
+}
+
+    .content.fixed-width {
+        max-width: 600px;
+    }
+
+.splash-head strong {
+    text-transform: uppercase;
+}
+
+.splash-head strong {
+    font-weight: normal;
+}
+.splash-subhead {
+    font-size: 120%;
+}
