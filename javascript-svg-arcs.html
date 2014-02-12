@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<svg height="500" width="500">
+ Sorry, your browser does not support inline SVG. 
+<rect width="500" height="500" style="fill:rgb(0,0,0);stroke-width:3;stroke:rgb(0,0,0)" />
+<circle cx="250" cy="250" r="10" fill="red" />
+//call arc function 
+<path id="arc1" fill="none" stroke="#446688" stroke-width="20" />
+<path id="arc2" fill="none" stroke="#444444" stroke-width="20" />
+<path id="arc3" fill="none" stroke="#465837" stroke-width="20" />
+</svg>
+
+<script type="text/javascript"> 
+
+function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+    var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+    return {
+    x: centerX + (radius * Math.cos(angleInRadians)),
+    y: centerY + (radius * Math.sin(angleInRadians))
+  };
+}
+
+function describeArc(x, y, radius, startAngle, endAngle){
+
+    var start = polarToCartesian(x, y, radius, endAngle);
+    var end = polarToCartesian(x, y, radius, startAngle);
+
+    var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
+
+    var d = [
+        "M", start.x, start.y, 
+        "A", radius, radius, 0, arcSweep, 0, end.x, end.y
+    ].join(" ");
+
+    return d;       
+}
+
+
+document.getElementById("arc1").setAttribute("d", describeArc(250, 250, 25, 90, 120)); //describeArc(x, y, radius, startAngle, endAngle)
+document.getElementById("arc2").setAttribute("d", describeArc(250, 250, 50, 10, 270)); 
+document.getElementById("arc3").setAttribute("d", describeArc(250, 250, 75, 90, 270)); 
+
+</script>
+</body>
+</html>
